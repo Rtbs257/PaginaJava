@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Interactivos de Programación y Matemáticas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>Resolución de Problemas Interactivos</h1>
+        <p>Ejercicios adaptados con JavaScript, HTML5 y CSS3</p>
+    </header>
+
+    <main class="main-container">
+
+        <!-- EJERCICIO 1 -->
+        <article class="card-ejercicio">
+            <div class="card-header">
+                <h2>1. El Reparto de los Camellos (Capítulo III)</h2>
+            </div>
+            <div class="card-body">
+                <div class="seccion">
+                    <h3>📖 Descripción del Capítulo</h3>
+                    <p>
+                        Tres hermanos debían repartirse una cantidad de camellos según fracciones específicas (1/2, 1/3 y 1/9). Como el total original no era divisible de forma exacta, Beremiz añadía un camello prestado para facilitar el reparto, beneficiando a todos y obteniendo una ganancia. ¡Ahora puedes probar ingresando cualquier cantidad de camellos!
+                    </p>
+                </div>
+
+                <div class="seccion">
+                    <h3>⚡ Algoritmo</h3>
+                    <ol>
+                        <li>Ingresar la cantidad deseada de camellos de la herencia.</li>
+                        <li>Sumar 1 camello auxiliar para ajustar la división.</li>
+                        <li>Calcular la mitad (1/2), la tercera parte (1/3) y la novena parte (1/9) del nuevo total.</li>
+                        <li>Determinar el sobrante final para Beremiz.</li>
+                    </ol>
+                </div>
+
+                <div class="seccion">
+                    <h3>📥 Entrada de Datos (Libre)</h3>
+                    <form id="formCamellos">
+                        <div class="form-group">
+                            <label for="camellosInput">Cantidad de camellos:</label>
+                            <input type="number" id="camellosInput" value="35" min="1" placeholder="Ej. 35, 17, 53...">
+                        </div>
+                        <button type="button" onclick="resolverCamellosLibre()">Calcular Reparto</button>
+                    </form>
+                </div>
+
+                <div class="seccion">
+                    <h3>📤 Salida de Datos</h3>
+                    <div id="resultadoCamellosLibre" class="salida-box">
+                        Ingresa un número y presiona "Calcular Reparto"...
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- EJERCICIO 2 -->
+        <article class="card-ejercicio">
+            <div class="card-header">
+                <h2>2. El Reparto de las Monedas por los Panes (Capítulo IV)</h2>
+            </div>
+            <div class="card-body">
+                <div class="seccion">
+                    <h3>📖 Descripción del Capítulo</h3>
+                    <p>
+                        Dos viajeros llevaban panes diferentes y los compartieron equitativamente con un jeque, quien al llegar a Bagdad pagó con monedas de oro. Mediante proporciones matemáticas exactas basadas en los trozos aportados y consumidos, se calcula el pago justo para cada uno. ¡Introduce los panes que desees!
+                    </p>
+                </div>
+
+                <div class="seccion">
+                    <h3>⚡ Algoritmo</h3>
+                    <ol>
+                        <li>Ingresar los panes aportados por el primer y segundo viajero.</li>
+                        <li>Multiplicar cada pan por 3 para obtener los trozos totales (asumiendo partición en tercios).</li>
+                        <li>Calcular el consumo equitativo de los 3 comensales.</li>
+                        <li>Restar el consumo individual a los trozos aportados para hallar la contribución neta y asignar las monedas.</li>
+                    </ol>
+                </div>
+
+                <div class="seccion">
+                    <h3>📥 Entrada de Datos (Libre)</h3>
+                    <form id="formPanes">
+                        <div class="form-group">
+                            <label for="panes1">Panes del Viajero 1 (Beremiz):</label>
+                            <input type="number" id="panes1" value="5" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="panes2">Panes del Viajero 2 (Bagdalí):</label>
+                            <input type="number" id="panes2" value="3" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="monedasTotales">Monedas de oro pagadas por el Jeque:</label>
+                            <input type="number" id="monedasTotales" value="8" min="1">
+                        </div>
+                        <button type="button" onclick="resolverPanesLibre()">Calcular Pago Justo</button>
+                    </form>
+                </div>
+
+                <div class="seccion">
+                    <h3>📤 Salida de Datos</h3>
+                    <div id="resultadoPanesLibre" class="salida-box">
+                        Ingresa los datos y presiona "Calcular Pago Justo"...
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- EJERCICIO 12 (Ecuación Cuadrática) -->
+        <article class="card-ejercicio">
+            <div class="card-header">
+                <h2>3. Ejercicio 12: Raíces de una Ecuación Cuadrática ($ax^2 + bx + c = 0$)</h2>
+            </div>
+            <div class="card-body">
+                <div class="seccion">
+                    <h3>📖 Descripción</h3>
+                    <p>
+                        Determina las raíces reales de una ecuación cuadrática ingresando los coeficientes $a$, $b$ y $c$. El programa calcula el discriminante $D = b^2 - 4ac$ y evalúa si tiene dos raíces, una raíz o no tiene raíces reales.
+                    </p>
+                </div>
+
+                <div class="seccion">
+                    <h3>⚡ Algoritmo</h3>
+                    <ol>
+                        <li>Recibir los valores de $a$, $b$ y $c$.</li>
+                        <li>Calcular el discriminante $D = b^2 - 4ac$.</li>
+                        <li>Si $D > 0$, calcular dos raíces reales distintas.</li>
+                        <li>Si $D = 0$, calcular una raíz real única.</li>
+                        <li>Si $D < 0$, indicar que no existen raíces reales.</li>
+                    </ol>
+                </div>
+
+                <div class="seccion">
+                    <h3>📥 Entrada de Coeficientes</h3>
+                    <form id="formCuadratica">
+                        <div class="form-group">
+                            <label for="valA">Coeficiente a:</label>
+                            <input type="number" id="valA" value="3" step="any">
+                        </div>
+                        <div class="form-group">
+                            <label for="valB">Coeficiente b:</label>
+                            <input type="number" id="valB" value="6" step="any">
+                        </div>
+                        <div class="form-group">
+                            <label for="valC">Coeficiente c:</label>
+                            <input type="number" id="valC" value="3" step="any">
+                        </div>
+                        <button type="button" onclick="resolverCuadratica()">Calcular Raíces</button>
+                    </form>
+                </div>
+
+                <div class="seccion">
+                    <h3>📤 Salida de Resultados</h3>
+                    <div id="resultadoCuadratica" class="salida-box">
+                        Ingresa los coeficientes y presiona "Calcular Raíces"...
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- EJERCICIO 13 (Estimación de Pi mediante Bucle) -->
+        <article class="card-ejercicio">
+            <div class="card-header">
+                <h2>4. Ejercicio 13: Estimación de $\pi$ mediante Serie con Bucle</h2>
+            </div>
+            <div class="card-body">
+                <div class="seccion">
+                    <h3>📖 Descripción</h3>
+                    <p>
+                        Estima el valor de $\pi$ utilizando la expresión matemática mediante un bucle para un número de términos $n$ dado (por ejemplo, 100, 10000 o 1000000) y compara el resultado con el valor real de $\pi$.
+                    </p>
+                </div>
+
+                <div class="seccion">
+                    <h3>⚡ Algoritmo</h3>
+                    <ol>
+                        <li>Ingresar el valor de iteraciones $n$.</li>
+                        <li>Utilizar un bucle desde $1$ hasta $n$ acumulando la suma de $1 / n^2$.</li>
+                        <li>Multiplicar el resultado total por $6$ y aplicar la raíz cuadrada.</li>
+                        <li>Comparar el valor obtenido con $\pi$ ($\text{Math.PI}$).</li>
+                    </ol>
+                </div>
+
+                <div class="seccion">
+                    <h3>📥 Entrada de Datos</h3>
+                    <form id="formPi">
+                        <div class="form-group">
+                            <label for="numN">Número de términos (n):</label>
+                            <input type="number" id="numN" value="100" min="1">
+                        </div>
+                        <button type="button" onclick="resolverPi()">Estimar Pi</button>
+                    </form>
+                </div>
+
+                <div class="seccion">
+                    <h3>📤 Salida de Resultados</h3>
+                    <div id="resultadoPi" class="salida-box">
+                        Ingresa el valor de n y presiona "Estimar Pi"...
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <script>
+        // Lógica Dinámica Ejercicio 1 (Camellos)
+        function resolverCamellosLibre() {
+            let base = parseInt(document.getElementById("camellosInput").value);
+            
+            if (isNaN(base) || base <= 0) {
+                document.getElementById("resultadoCamellosLibre").innerHTML = "Por favor, ingresa un número válido de camellos.";
+                return;
+            }
+
+            let totalProcesar = base + 1; 
+            let h1 = totalProcesar / 2; 
+            let h2 = totalProcesar / 3; 
+            let h9 = totalProcesar / 9; 
+            
+            let repartidos = h1 + h2 + h9; 
+            let sobrantes = totalProcesar - repartidos; 
+
+            document.getElementById("resultadoCamellosLibre").innerHTML = 
+                `<strong>Cálculo con ${base} camellos (Operando con ${totalProcesar}):</strong><br>` +
+                `• Parte 1 (1/2): ${h1}<br>` +
+                `• Parte 2 (1/3): ${h2}<br>` +
+                `• Parte 3 (1/9): ${h9.toFixed(2)}<br>` +
+                `• Total asignado: ${repartidos.toFixed(2)}<br>` +
+                `• Sobrante para Beremiz: ${sobrantes.toFixed(2)}`;
+        }
+
+        // Lógica Dinámica Ejercicio 2 (Panes y Monedas)
+        function resolverPanesLibre() {
+            let p1 = parseInt(document.getElementById("panes1").value);
+            let p2 = parseInt(document.getElementById("panes2").value);
+            let monedas = parseFloat(document.getElementById("monedasTotales").value);
+
+            if (isNaN(p1) || isNaN(p2) || isNaN(monedas) || p1 < 0 || p2 < 0) {
+                document.getElementById("resultadoPanesLibre").innerHTML = "Por favor, ingresa valores numéricos válidos.";
+                return;
+            }
+
+            let trozos1 = p1 * 3;
+            let trozos2 = p2 * 3;
+            let totalTrozos = trozos1 + trozos2;
+            let consumoIndividual = totalTrozos / 3;
+
+            let aporte1 = trozos1 - consumoIndividual;
+            let aporte2 = trozos2 - consumoIndividual;
+
+            let pago1 = (aporte1 / totalTrozos) * (monedas * 3);
+            let pago2 = (aporte2 / totalTrozos) * (monedas * 3);
+
+            document.getElementById("resultadoPanesLibre").innerHTML = 
+                `<strong>Resultado con ${p1} y ${p2} panes (${monedas} monedas):</strong><br>` +
+                `• Trozos totales: ${totalTrozos} (Consumo por persona: ${consumoIndividual})<br>` +
+                `• Aporte neto Viajero 1: ${aporte1} trozos<br>` +
+                `• Aporte neto Viajero 2: ${aporte2} trozos<br>` +
+                `• Pago proporcional sugerido: Viajero 1 = ${pago1.toFixed(2)} monedas | Viajero 2 = ${pago2.toFixed(2)} monedas`;
+        }
+
+        // Lógica Ejercicio 12 (Cuadrática)
+        function resolverCuadratica() {
+            let a = parseFloat(document.getElementById("valA").value);
+            let b = parseFloat(document.getElementById("valB").value);
+            let c = parseFloat(document.getElementById("valC").value);
+
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                document.getElementById("resultadoCuadratica").innerHTML = "Por favor, ingresa valores numéricos válidos para a, b y c.";
+                return;
+            }
+
+            if (a === 0) {
+                document.getElementById("resultadoCuadratica").innerHTML = "El coeficiente 'a' no puede ser 0 en una ecuación cuadrática.";
+                return;
+            }
+
+            let D = (b * b) - (4 * a * c);
+            let salida = `<strong>Discriminante (D) = ${D.toFixed(4)}</strong><br>`;
+
+            if (D > 0) {
+                let x1 = (-b + Math.sqrt(D)) / (2 * a);
+                let x2 = (-b - Math.sqrt(D)) / (2 * a);
+                salida += `The equation has two roots.<br>• Raíz 1 (x1) = ${x1.toFixed(4)}<br>• Raíz 2 (x2) = ${x2.toFixed(4)}`;
+            } else if (D === 0) {
+                let x = -b / (2 * a);
+                salida += `The equation has one root.<br>• Raíz única (x) = ${x.toFixed(4)}`;
+            } else {
+                salida += `The equation has no real roots.`;
+            }
+
+            document.getElementById("resultadoCuadratica").innerHTML = salida;
+        }
+
+        // Lógica Ejercicio 13 (Estimación de Pi)
+        function resolverPi() {
+            let n = parseInt(document.getElementById("numN").value);
+
+            if (isNaN(n) || n <= 0) {
+                document.getElementById("resultadoPi").innerHTML = "Por favor, ingresa un número entero positivo para n.";
+                return;
+            }
+
+            let suma = 0;
+            for (let i = 1; i <= n; i++) {
+                suma += 1 / (i * i);
+            }
+
+            let piEstimado = Math.sqrt(6 * suma);
+            let piReal = Math.PI;
+            let diferencia = Math.abs(piEstimado - piReal);
+
+            document.getElementById("resultadoPi").innerHTML = 
+                `<strong>Resultados con n = ${n}:</strong><br>` +
+                `• Valor estimado de Pi = ${piEstimado.toFixed(10)}<br>` +
+                `• Valor real de Pi (Math.PI) = ${piReal.toFixed(10)}<br>` +
+                `• Diferencia absoluta = ${diferencia.toExponential(4)}`;
+        }
+    </script>
+</body>
+</html>
